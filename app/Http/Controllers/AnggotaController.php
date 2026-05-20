@@ -27,7 +27,7 @@ class AnggotaController extends Controller
         }
 
         $anggota = $query->withCount(['peminjaman as pinjaman_aktif' => fn($q) => $q->where('status', 'dipinjam')])
-                         ->latest()->paginate(10)->withQueryString();
+                         ->latest()->paginate(15)->withQueryString();
 
         return view('anggota.index', compact('anggota'));
     }

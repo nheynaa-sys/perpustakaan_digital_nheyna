@@ -134,13 +134,15 @@
     </div>
 
     {{-- Pagination --}}
-    @if($buku->hasPages())
     <div class="mt-3 d-flex justify-content-between align-items-center">
         <div class="text-muted small">
-            Menampilkan {{ $buku->firstItem() }}–{{ $buku->lastItem() }} dari {{ $buku->total() }} buku
+            @if($buku->total())
+                Menampilkan {{ $buku->firstItem() }}–{{ $buku->lastItem() }} dari {{ $buku->total() }} buku
+            @else
+                Belum ada buku
+            @endif
         </div>
-        {{ $buku->links() }}
+        {{ $buku->links('vendor.pagination.admin') }}
     </div>
-    @endif
 </div>
 @endsection

@@ -31,7 +31,7 @@ class BukuController extends Controller
             $query->whereHas('kategori', fn($q) => $q->where('kategori.id', $request->kategori_id));
         }
 
-        $buku      = $query->latest()->paginate(10)->withQueryString();
+        $buku      = $query->latest()->paginate(15)->withQueryString();
         $kategoris = Kategori::orderBy('nama_kategori')->get();
 
         return view('buku.index', compact('buku', 'kategoris'));

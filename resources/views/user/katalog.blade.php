@@ -227,7 +227,7 @@
 
         .book-cover-wrap {
             position: relative;
-            height: 180px;
+            height: 340px;
             background: #E6F1FB;
             overflow: hidden;
         }
@@ -236,6 +236,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .book-cover-placeholder {

@@ -95,13 +95,15 @@
             </tbody>
         </table>
     </div>
-    @if($anggota->hasPages())
     <div class="mt-3 d-flex justify-content-between align-items-center">
         <div class="text-muted small">
-            Menampilkan {{ $anggota->firstItem() }}–{{ $anggota->lastItem() }} dari {{ $anggota->total() }} anggota
+            @if($anggota->total())
+                Menampilkan {{ $anggota->firstItem() }}–{{ $anggota->lastItem() }} dari {{ $anggota->total() }} anggota
+            @else
+                Belum ada anggota
+            @endif
         </div>
-        {{ $anggota->links() }}
+        {{ $anggota->links('vendor.pagination.admin') }}
     </div>
-    @endif
 </div>
 @endsection
