@@ -170,6 +170,15 @@
         .btn-admin   { background: #b45309; }
         .btn-admin:hover   { background: #92400e; transform: translateY(-1px); }
         .btn-masuk:active  { transform: translateY(0) !important; }
+        .register-link {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .register-link:hover {
+            text-decoration: underline;
+            color: var(--navy);
+        }
         .footer-note { font-size: 0.74rem; color: #a8c6e0; text-align: center; margin-top: 1rem; }
         .alert-status {
             background: #d1fae5; border: 1px solid #a7f3d0; color: #065f46;
@@ -306,6 +315,10 @@
                 <i class="bi bi-box-arrow-in-right"></i>
                 <span id="btnText">Masuk sebagai Anggota</span>
             </button>
+
+            <p class="text-center mt-3">
+                Belum punya akun? <a href="{{ route('register') }}" class="register-link">Daftar sekarang</a>
+            </p>
 
             <p class="footer-note">
                 <i class="bi bi-shield-check me-1"></i>Koneksi aman &amp; terenkripsi
